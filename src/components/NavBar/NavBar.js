@@ -42,7 +42,7 @@ function NavBar() {
                 </div>
             </div>
             <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-                <div>
+                <div className='side-menu'>
                 <ul className='nav-menu-items'>
                     <li className='navbar-toggle'>
                         <Link to="#" className='menu-bars ml-8 text-3xl'>
@@ -53,22 +53,31 @@ function NavBar() {
                         return (
                             <li key={index} className={ item.cName }>
                                 <Link to={item.url}>
-                                    <span className='text-white'>{item.title}</span>
+                                    <span className='text-custom-green'>{item.title}</span>
                                 </Link>
                             </li>
                         )
                     })}
                 </ul>
                 </div>
-                <div className='flex'>
-                <div className='text-white min-w-full'>
+                <div className='flex flex-col flex-wrap justify-center space-y-32'>
+                <div className='text-white'>
                     THIS IS EVENT CONTAINER 1
+                    <div>
+                        <div>COMPONENT !</div>
+                    </div>
                 </div>
-                <div className='text-white min-w-full'>
-                    THIS IS EVENT CONTAINER 1
+                <div className='text-white'>
+                    THIS IS EVENT CONTAINER 2
+                    <div>
+                        <div>COMPONENT !</div>
+                    </div>
                 </div>
-                <div className='text-white min-w-full'>
-                    THIS IS EVENT CONTAINER 1
+                <div className='text-white'>
+                    THIS IS EVENT CONTAINER 3
+                    <div>
+                        <div>COMPONENT !</div>
+                    </div>
                 </div>
                 </div>
             </nav>
