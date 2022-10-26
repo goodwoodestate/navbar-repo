@@ -1,4 +1,50 @@
 .title {
-    font-family: 'Cardo', serif;;
+    font-family: 'Cardo', serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    height: 80px;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.menu-bars {
+    font-size: 2rem;
+    background: none;
+}
+
+.nav-menu {
+    background-color: black;
+    width: 100%;
+    height: 93vh;
+    display: flex;
+    display: none;
+    transition: 850ms;
+}
+
+.nav-menu.active {
+    transition: 350ms;
+    display: flex;
+}
+
+.nav-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 0px 8px 16px;
+    list-style: none;
+}
+
+.nav-links {
+    font-size: 30px;
+}
+
+.nav-text a {
+    color: red;
 }
 
