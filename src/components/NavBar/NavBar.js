@@ -2,18 +2,14 @@ import React, { useState } from 'react';
 import { FaBars, FaTimesCircle } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { MenuData } from './MenuData';
+import EventCard from './Events';
 import './NavBar.css';
 
 function NavBar() {
     const [sidebar, setSidebar] = useState(false)
-    const [megamenu, setMegaMenu] = useState(false)
 
     const showSidebar = () => {
         setSidebar(!sidebar)
-    }
-
-    const megaMenu = () => {
-        setMegaMenu(!megamenu)
     }
 
     return (
@@ -62,9 +58,9 @@ function NavBar() {
                 </div>
                 <div className='flex flex-col flex-wrap justify-center space-y-32'>
                 <div className='text-white'>
-                    THIS IS EVENT CONTAINER 1
+                    Motorsport
                     <div>
-                        <div>COMPONENT !</div>
+                        <EventCard />
                     </div>
                 </div>
                 <div className='text-white'>
