@@ -56,23 +56,23 @@ function NavBar() {
                     })}
                 </ul>
                 </div>
-                <div className='flex flex-col flex-wrap justify-center space-y-32'>
-                <div className='text-white'>
+                <div className='flex flex-col flex-wrap justify-center space-y-14'>
+                <div className='text-3xl text-white'>
                     Motorsport
                     <div>
                         <EventCard />
                     </div>
                 </div>
-                <div className='text-white'>
+                <div className='text-white text-3xl'>
                     THIS IS EVENT CONTAINER 2
                     <div>
-                        <div>COMPONENT !</div>
+                        <EventCard />
                     </div>
                 </div>
-                <div className='text-white'>
+                <div className='text-white text-3xl'>
                     THIS IS EVENT CONTAINER 3
                     <div>
-                        <div>COMPONENT !</div>
+                        <EventCard />
                     </div>
                 </div>
                 </div>
