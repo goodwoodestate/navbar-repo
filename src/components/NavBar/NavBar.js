@@ -64,17 +64,17 @@ function NavBar() {
                 </div>
                 <div className='flex flex-col flex-wrap justify-center space-y-14 w-4/6'>
                 <div className='text-3xl text-white w-full overflow-x-auto'>
-                    Motorsport
+                    Browse By Events
                         <EventCard />
                 </div>
                 <div className='text-white text-3xl w-full overflow-x-auto'>
-                    THIS IS EVENT CONTAINER 2
+                    Browse By Expierence
                     <div>
                         <EventCard />
                     </div>
                 </div>
                 <div className='text-white text-3xl w-full overflow-x-auto'>
-                    THIS IS EVENT CONTAINER 3
+                    Browse By Something
                     <div>
                         <EventCard />
                     </div>
