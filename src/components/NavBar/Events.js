@@ -4,10 +4,10 @@ import './Event.css';
    
 function EventCard() {
   return (
-    <div className="flex m-8 overflow-x-auto">
+    <div className="flex m-8">
       {MotorsportData.map((item) => {
         return (
-          <div >
+          <div className="m-h-3">
           <a href="#" className="block p-6 max-w-sm rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 m-8 w-4/5 test">
             <img src={item.image}></img>
               <h5 className="mb-2 text-2xl font-bold tracking-tight  text-white">{item.title}</h5>

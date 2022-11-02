@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { MenuData } from './MenuData';
 import EventCard from './Events';
 import './NavBar.css';
-import Accordion from './MenuDropDown';
 import MenuDropDown from './MenuDropDown';
 
 function NavBar() {
@@ -44,8 +43,10 @@ function NavBar() {
                 <ul className='nav-menu-items'>
                     <li className='navbar-toggle'>
                         <Link to="#" className='menu-bars ml-8 text-3xl'>
-                            <FaTimesCircle className='m-4 text-3xl text-white' />
                         </Link>
+                    </li>
+                    <li className='mt-8'>
+                        <MenuDropDown />
                     </li>
                     {MenuData.map((item, index) => {
                         return (
@@ -56,25 +57,23 @@ function NavBar() {
                             </li>
                         )
                     })}
-                    <li>
+                    <li className='mt-8'>
                         <MenuDropDown />
                     </li>
                 </ul>
                 </div>
-                <div className='flex flex-col flex-wrap justify-center space-y-14'>
-                <div className='text-3xl text-white'>
+                <div className='flex flex-col flex-wrap justify-center space-y-14 w-4/6'>
+                <div className='text-3xl text-white w-full overflow-x-auto'>
                     Motorsport
-                    <div>
                         <EventCard />
-                    </div>
                 </div>
-                <div className='text-white text-3xl'>
+                <div className='text-white text-3xl w-full overflow-x-auto'>
                     THIS IS EVENT CONTAINER 2
                     <div>
                         <EventCard />
                     </div>
                 </div>
-                <div className='text-white text-3xl'>
+                <div className='text-white text-3xl w-full overflow-x-auto'>
                     THIS IS EVENT CONTAINER 3
                     <div>
                         <EventCard />

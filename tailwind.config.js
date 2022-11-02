@@ -8,7 +8,9 @@ module.exports = withMT({
     extend: {
       colors: {
         'custom-green':'#A5E7D4',
-        'text-custom-green':'#A5E7D4'
+        'text-custom-green':'#A5E7D4',
+        'bg-custom':'#131313',
+        'nav-second-text':'#979797'
       }
     },
     
