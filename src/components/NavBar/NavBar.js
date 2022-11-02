@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { MenuData } from './MenuData';
 import EventCard from './Events';
 import './NavBar.css';
+import Accordion from './MenuDropDown';
+import MenuDropDown from './MenuDropDown';
 
 function NavBar() {
     const [sidebar, setSidebar] = useState(false)
@@ -54,6 +56,9 @@ function NavBar() {
                             </li>
                         )
                     })}
+                    <li>
+                        <MenuDropDown />
+                    </li>
                 </ul>
                 </div>
                 <div className='flex flex-col flex-wrap justify-center space-y-14'>

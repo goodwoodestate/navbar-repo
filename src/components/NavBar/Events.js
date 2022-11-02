@@ -5,13 +5,13 @@ import './Event.css';
 function EventCard() {
   return (
     <div className="flex m-8 overflow-x-auto">
-      {MotorsportData.map((item, index) => {
+      {MotorsportData.map((item) => {
         return (
           <div >
-          <a href="#" class="block p-6 max-w-sm rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 m-8 w-4/5 test">
+          <a href="#" className="block p-6 max-w-sm rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 m-8 w-4/5 test">
             <img src={item.image}></img>
-              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-white">{item.title}</h5>
-              <p class="font-normal text-gray-700 dark:text-gray-400">HELLLL YEAHHHH</p>
+              <h5 className="mb-2 text-2xl font-bold tracking-tight  text-white">{item.title}</h5>
+              <p className="font-normal text-white dark:text-gray-400">{item.description}</p>
           </a>
           </div>
         );
