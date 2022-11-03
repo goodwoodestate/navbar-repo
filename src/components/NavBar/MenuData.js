@@ -1,5 +1,6 @@
 export const MenuData = [
     {
+        id: 1,
         title: "Motorsport",
         url: "#",
         cName: "nav-links",
@@ -7,6 +8,7 @@ export const MenuData = [
         description:"All things from old to new"
     },
     {
+        id: 2,
         title: "HorseRacing",
         url: "#",
         cName: "nav-links",
@@ -14,6 +16,7 @@ export const MenuData = [
         description:"Why the long face? Come race"
     },
     {
+        id: 3,
         title: "Hotel",
         url: "#",
         cName: "nav-links",
@@ -21,6 +24,7 @@ export const MenuData = [
         description:"Fancy getting away? Then come and stay"
     },
     {
+        id: 4,
         title: "House",
         url: "#",
         cName: "nav-links",
@@ -28,6 +32,7 @@ export const MenuData = [
         description:"A tour of the treasures and history"
     },
     {
+        id: 5,
         title: "Careers",
         url: "#",
         cName: "nav-links",
