@@ -7,7 +7,7 @@ function EventCard() {
   return (
     <div className="flex m-8">
       {MotorsportData.map((item) => {
-        
+        console.log(item.description)
         const bg = item.image;
         return (
           <div key={item.id} className="m-h-3">
