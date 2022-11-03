@@ -64,20 +64,40 @@ function NavBar() {
                 </div>
                 <div className='flex flex-col flex-wrap justify-center space-y-14 w-4/6'>
                 <div className='text-3xl text-white w-full overflow-x-auto'>
-                    Browse By Events
+                    <div className='flex justify-between'>
+                        <div className="">
+                        <h5 className='text-lg'>Browse By Event</h5>
+                        </div>
+                        <div className='justify-end'><button class="text-xs bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+  Browse all
+</button></div>
+                        </div>
+                   
                         <EventCard />
                 </div>
                 <div className='text-white text-3xl w-full overflow-x-auto'>
-                    Browse By Expierence
-                    <div>
+                <div className='flex justify-between'>
+                        <div className="">
+                        <h5 className='text-lg'>Browse By Event</h5>
+                        </div>
+                        <div className='justify-end'><button class="text-xs bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+  Browse all
+</button></div>
+                        </div>
+                   
                         <EventCard />
-                    </div>
                 </div>
                 <div className='text-white text-3xl w-full overflow-x-auto'>
-                    Browse By Something
-                    <div>
+                <div className='flex justify-between'>
+                        <div className="">
+                        <h5 className='text-lg'>Browse By Event</h5>
+                        </div>
+                        <div className='justify-end'><button class="text-xs bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+  Browse all
+</button></div>
+                        </div>
+                   
                         <EventCard />
-                    </div>
                 </div>
                 </div>
             </nav>
