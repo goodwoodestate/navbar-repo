@@ -4,7 +4,7 @@ export const MotorsportData = [
             url: "#",
             cName: "event-data",
             description: "Fast cars",
-            image: "https://www.goodwood.com/globalassets/motorsport/revival/2018-racing/alex-benwell-best-photos/10-revival2018_jaysonfong_0032.jpg?crop=(0,259,4928,3031)&width=198"
+            image: "https://www.goodwood.com/globalassets/motorsport/fos/2021-images/image-highlights-updates/redo/29---all-four-wheels-off-the-ground--the-rally-stage-is-worth-a-watch-at-the-top-of-the-hillclimb.jpg?crop=(0,466,6016,3850)&width=1240"
         },
         {
             title: "Revival",
