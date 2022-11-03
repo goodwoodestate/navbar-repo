@@ -25,4 +25,3 @@ function EventCard(props) {
 
 
 
-export default EventCard;
