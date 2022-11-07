@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { FaBars, FaTimesCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { MenuData } from "./MenuData";
-import OpenBookButton from './BookNow/BookNow'
 import EventCard from "./Events";
 import "./NavBar.css";
 import MenuDropDown from "./MenuDropDown";
+import { HorseRacingData, MotorsportData, StayEatData } from "../EventData";
+import ShowBookMenu from "./BookNow/BookNow";
+import OpenBookButton from "./BookNow/BookNow";
 
 function NavBar() {
   const [sidebar, setSidebar] = useState(false);
@@ -13,7 +15,6 @@ function NavBar() {
   const showSidebar = () => {
     setSidebar(!sidebar);
   };
-
 
   return (
     <>
@@ -49,11 +50,12 @@ function NavBar() {
             <li className="mt-8">
               <MenuDropDown />
             </li>
+
             {MenuData.map((item, index) => {
               return (
                 <li key={index} className={item.cName}>
                   <Link to={item.url}>
-                    <span className="text-custom-green">{item.title}</span>
+                    <span className="text-white ">{item.title}</span>
                   </Link>
                 </li>
               );
@@ -63,20 +65,20 @@ function NavBar() {
             </li>
           </ul>
         </div>
-        <div className="flex flex-col flex-wrap justify-center space-y-14 w-4/6 ml-4 mt-4">
+        <div className="flex flex-col flex-wrap justify-center space-y-14 w-4/6">
           <div className="text-3xl text-white w-full overflow-x-auto">
             <div className="flex justify-between">
               <div className="">
                 <h5 className="text-lg">Browse By Event</h5>
               </div>
               <div className="justify-end">
-                <button class="text-xs bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <button className="text-xs bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
                   Browse all
                 </button>
               </div>
             </div>
 
-            <EventCard />
+            <EventCard data={MotorsportData} />
           </div>
           <div className="text-white text-3xl w-full overflow-x-auto">
             <div className="flex justify-between">
@@ -84,13 +86,13 @@ function NavBar() {
                 <h5 className="text-lg">Browse By Event</h5>
               </div>
               <div className="justify-end">
-                <button class="text-xs bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <button className="text-xs bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
                   Browse all
                 </button>
               </div>
             </div>
 
-            <EventCard />
+            <EventCard data={HorseRacingData} />
           </div>
           <div className="text-white text-3xl w-full overflow-x-auto">
             <div className="flex justify-between">
@@ -98,16 +100,17 @@ function NavBar() {
                 <h5 className="text-lg">Browse By Event</h5>
               </div>
               <div className="justify-end">
-                <button class="text-xs bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <button className="text-xs bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
                   Browse all
                 </button>
               </div>
             </div>
 
-            <EventCard />
+            <EventCard data={StayEatData} />
           </div>
         </div>
       </nav>
+
     </>
   );
 }
