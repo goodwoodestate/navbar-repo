@@ -6,14 +6,14 @@ const MenuDropDown = () => {
             <AccordionItem>
                 {({open}) => (
                     <>
-                        <AccordionHeader className="w-full flex justify-between items-center text-custom-green mt-4 text-3xl">
-                            <span>Lets Click here hmmm</span>
+                        <AccordionHeader className="w-full flex justify-between items-center text-white mt-2 text-3xl">
+                            <span className='text-[1.25rem]'>Navigation Dropdown</span>
                             <svg className={`w-6 h-6 ${!open ? '' : 'rotate-90'}`} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" /></svg>
                         </AccordionHeader>
 
                         <AccordionBody>
                             <div className="p-5 text-3xl text-nav-second-text">
-                                Oh im Hiding...
+                                <div className='text-base'>Subitem</div>
                             </div>
                         </AccordionBody>
                     </>

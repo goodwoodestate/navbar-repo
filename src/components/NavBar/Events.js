@@ -1,12 +1,12 @@
 import React from "react";
-import { MotorsportData } from "../EventData";
+
 import './Event.css';
    
-function EventCard() {
+function EventCard(props) {
   
   return (
     <div className="flex mt-4">
-      {MotorsportData.map((item) => {
+      {props.data.map((item) => {
         console.log(item.description)
         const bg = item.image;
         return (

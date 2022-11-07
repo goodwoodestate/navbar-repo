@@ -35,11 +35,50 @@ export const MotorsportData = [
             image: "https://www.goodwood.com/globalassets/motorsport/revival/2021/highlights-updates/6.-eruptions-of-tire-smoke-as-cars-take-off-from-the-grid.jpg?crop=(0,493,4737,3158)&width=1240"
         }
 ]
+export const TestData = [
+    {
+        title: "Self catering",
+        url: "#",
+        cName: "event-data",
+        description: "Luxury stay",
+        image: "https://www.goodwood.com/globalassets/venues/self-catering/the-pheasantry/thepheasantry_stephenhayward_14.jpg?crop=(0,201,1920,1281)&width=640"
+    },
+    {
+        title: "Self catering",
+        url: "#",
+        cName: "event-data",
+        description: "Luxury stay",
+        image: "https://www.goodwood.com/globalassets/venues/self-catering/the-pheasantry/thepheasantry_stephenhayward_14.jpg?crop=(0,201,1920,1281)&width=640"
+    },
+    {
+        title: "Self catering",
+        url: "#",
+        cName: "event-data",
+        description: "Luxury stay",
+        image: "https://www.goodwood.com/globalassets/venues/self-catering/the-pheasantry/thepheasantry_stephenhayward_14.jpg?crop=(0,201,1920,1281)&width=640"
+    },
+    {
+        title: "Self catering",
+        url: "#",
+        cName: "event-data",
+        description: "Luxury stay",
+        image: "https://www.goodwood.com/globalassets/venues/self-catering/the-pheasantry/thepheasantry_stephenhayward_14.jpg?crop=(0,201,1920,1281)&width=640"
+    },
+    {
+        title: "Self catering",
+        url: "#",
+        cName: "event-data",
+        description: "Luxury stay",
+        image: "https://www.goodwood.com/globalassets/venues/self-catering/the-pheasantry/thepheasantry_stephenhayward_14.jpg?crop=(0,201,1920,1281)&width=640"
+    },
+]
 export const HorseRacingData = [
         {
             title: "Season Opener",
             url: "#",
-            cName: "event-data"
+            cName: "event-data",
+            description: "Speedy members",
+            image: "https://www.goodwood.com/globalassets/goodwoof/dr-approved-images/dogs-in-fido-lido-goodwoof-2022.jpg?crop=(0,55,2448,1432)&width=1280"
         },
         {
             title: "May Festival",
