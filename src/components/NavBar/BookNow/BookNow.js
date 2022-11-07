@@ -3,11 +3,19 @@ import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 
 function OpenBookButton() {
+  console.log("Here")
   const [open, setOpen] = useState(true)
-
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={setOpen}>
+      <button
+        type="button"
+        className="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+        onClick={() => setOpen()}
+      >
+        <span className="sr-only">Close panel</span>
+        <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+      </button>
         <div className="fixed inset-0" />
 
         <div className="fixed inset-0 overflow-hidden">

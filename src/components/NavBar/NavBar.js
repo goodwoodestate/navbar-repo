@@ -15,6 +15,7 @@ function NavBar() {
     setSidebar(!sidebar);
   };
 
+
   return (
     <>
       <div className="navbar">
@@ -33,9 +34,10 @@ function NavBar() {
           <button className="bg-black border-2 w-20 m-3 text-base border-custom-green text-white">
             Shop
           </button>
-          <button onClick={OpenBookButton} className="bg-custom-green w-20 m-3 text-lg text-black">
+          {/* <button onClick={OpenBookButton} className="bg-custom-green w-20 m-3 text-lg text-black">
             Book
-          </button>
+          </button> */}
+          <OpenBookButton />
           <i className="fa-solid fa-magnifying-glass text-2xl text-white m-3"></i>
           <button className="text-white m-3">Sign In</button>
         </div>
