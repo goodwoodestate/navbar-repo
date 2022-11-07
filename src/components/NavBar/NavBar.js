@@ -6,7 +6,6 @@ import EventCard from "./Events";
 import "./NavBar.css";
 import MenuDropDown from "./MenuDropDown";
 import { HorseRacingData, MotorsportData, StayEatData } from "../EventData";
-import ShowBookMenu from "./BookNow/BookNow";
 import OpenBookButton from "./BookNow/BookNow";
 
 function NavBar() {

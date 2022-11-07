@@ -2,9 +2,8 @@ import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 
-export default function OpenBookButton() {
+function OpenBookButton() {
   const [open, setOpen] = useState(true)
-  
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -57,3 +56,5 @@ export default function OpenBookButton() {
     </Transition.Root>
   )
 }
+
+export default OpenBookButton
