@@ -14,7 +14,13 @@ function NavBar() {
   const showSidebar = () => {
     setSidebar(!sidebar);
   };
-  
+
+  const [shopButton, setShopButton] = useState();
+
+  const showShopBar = () => {
+    setShopButton(!shopButton);
+  }
+
   return (
     <>
       <div className="navbar">
@@ -33,10 +39,9 @@ function NavBar() {
           <button className="bg-black border-2 w-20 m-3 text-base border-custom-green text-white">
             Shop
           </button>
-          <button className="bg-custom-green w-20 m-3 text-lg text-black">
+          <button onClick={showShopBar} className="bg-custom-green w-20 m-3 text-lg text-black">
             Book
           </button>
-          <OpenBookButton />
           <i className="fa-solid fa-magnifying-glass text-2xl text-white m-3"></i>
           <button className="text-white m-3">Sign In</button>
         </div>

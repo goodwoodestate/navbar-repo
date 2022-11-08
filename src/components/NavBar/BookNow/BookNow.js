@@ -4,11 +4,11 @@ import { XMarkIcon } from '@heroicons/react/24/outline'
 
 function OpenBookButton() {
   
-  const [open, setOpen] = useState(true)
+  const [, setOpen] = useState(true)
 
   return (
     
-    <Transition.Root show={open} as={Fragment}>
+    <Transition.Root as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={setOpen}>
         <div className="fixed inset-0" />
         <div className="fixed inset-0 overflow-hidden">
