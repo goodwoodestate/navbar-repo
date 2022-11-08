@@ -33,8 +33,30 @@ export const MotorsportData = [
             cName: "event-data",
             description: "Speedy members",
             image: "https://www.goodwood.com/globalassets/motorsport/revival/2021/highlights-updates/6.-eruptions-of-tire-smoke-as-cars-take-off-from-the-grid.jpg?crop=(0,493,4737,3158)&width=1240"
+        },
+        {
+            title: "Award Winning Dining",
+            url: "#",
+            cName: "event-data",
+            description: "Finesse in Food",
+            image: "https://www.goodwood.com/globalassets/venues/hotel/bar-and-grill/food-images-2019/goodwood_bar_and_grill_alexbenwell040.jpg?crop=(0,129,5012,2948)&width=950"
+        },
+        {
+            title: "Afternoon Tea",
+            url: "#",
+            cName: "event-data",
+            description: "Tea, Tour, Terrific",
+            image: "https://www.goodwood.com/globalassets/venues/goodwood-house/plan-your-visit/afternoon-tea/afternoontea_alexbenwell040.jpg?crop=(0,762,4656,3381)&width=1280"
+        },
+        {
+            title: "Sleep, Stay, Unwind",
+            url: "#",
+            cName: "event-data",
+            description: "Relax and stay, block the rest away",
+            image: "https://www.goodwood.com/globalassets/venues/hotel/homepage/158-bedroom-character-upgrade-credit-mike-caldwell.jpg?crop=(81,0,2307,1252)&width=640"
         }
 ]
+
 export const HorseRacingData = [
         {
             title: "Season Opener",
@@ -70,6 +92,20 @@ export const HorseRacingData = [
             cName: "event-data",
             description: "Galloping the Midweek away",
             image: "https://www.goodwood.com/globalassets/horseracing/2022/enclosures/enclosure-guide-horses-racing-goodwood.jpg?crop=(0,182,2447,1558)&width=1240"
+        },
+        {
+            title: "Goodwoods Stately Home",
+            url: "#",
+            cName: "event-data",
+            description: "Goodwood house and land",
+            image: "https://www.goodwood.com/globalassets/flying/experiences/james-martin-cessna-over-goodwood.jpg?crop=(0,987,5222,3924)&width=1280"
+        },
+        {
+            title: "Swim",
+            url: "#",
+            cName: "event-data",
+            description: "Swimming for all",
+            image: "https://www.goodwood.com/globalassets/venues/health-club/goodwood-spa--gym0278.jpg?crop=(0,415,7952,4888)&width=1280"
         }
 ]
 export const StayEatData = [
