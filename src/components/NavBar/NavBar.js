@@ -5,8 +5,10 @@ import { MenuData } from "./MenuData";
 import EventCard from "./Events";
 import "./NavBar.css";
 import MenuDropDown from "./MenuDropDown";
-import { HorseRacingData, MotorsportData, StayEatData } from "../EventData";
-import OpenBookButton from "./BookNow/BookNow";
+import { HorseRacingData, MotorsportData } from "../EventData";
+import { Fragment } from 'react'
+import { Dialog, Transition } from '@headlessui/react'
+import { XMarkIcon } from '@heroicons/react/24/outline'
 
 function NavBar() {
   const [sidebar, setSidebar] = useState(false);
@@ -14,6 +16,12 @@ function NavBar() {
   const showSidebar = () => {
     setSidebar(!sidebar);
   };
+
+  const [open, setOpen] = useState(false)
+
+  const showShopBar = () => {
+    setOpen(!open)
+  }
 
   return (
     <>
@@ -30,12 +38,57 @@ function NavBar() {
           </a>
         </div>
         <div>
-          <button className="bg-black border-2 w-20 m-3 text-base border-custom-green text-white">
+          <button onClick={showShopBar} className="bg-black border-2 w-20 m-3 text-base border-custom-green text-white">
             Shop
           </button>
-          {/* <button onClick={OpenBookButton} className="bg-custom-green w-20 m-3 text-lg text-black">
-            Book
-          </button> */}
+
+          <Transition.Root as={Fragment}>
+            <Dialog as="div" className="relative z-10">
+              <div className="fixed inset-0" />
+              <div className="fixed inset-0 overflow-hidden">
+                <div className="absolute inset-0 overflow-hidden">
+                  <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+                    <Transition.Child
+                      as={Fragment}
+                      enter="transform transition ease-in-out duration-500 sm:duration-700"
+                      enterFrom="translate-x-full"
+                      enterTo="translate-x-0"
+                      leave="transform transition ease-in-out duration-500 sm:duration-700"
+                      leaveFrom="translate-x-0"
+                      leaveTo="translate-x-full"
+                    >
+                      <Dialog.Panel className="pointer-events-auto w-screen max-w-md">
+                        <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
+                          <div className="px-4 sm:px-6">
+                            <div className="flex items-start justify-between">
+                              <Dialog.Title className="text-lg font-medium text-gray-900">Panel title</Dialog.Title>
+                              <div className="ml-3 flex h-7 items-center">
+                                <button
+                                  type="button"
+                                  className="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                  onClick={() => setOpen(false)}
+                                >
+                                  <span className="sr-only">Close panel</span>
+                                  <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="relative mt-6 flex-1 px-4 sm:px-6">
+                            {/* Replace with your content */}
+                            <div className="absolute inset-0 px-4 sm:px-6">
+                              <div className="h-full border-2 border-dashed border-gray-200" aria-hidden="true" />
+                            </div>
+                            {/* /End replace */}
+                          </div>
+                        </div>
+                      </Dialog.Panel>
+                    </Transition.Child>
+                  </div>
+                </div>
+              </div>
+            </Dialog>
+          </Transition.Root>
           {/* <OpenBookButton /> */}
           <i className="fa-solid fa-magnifying-glass text-2xl text-white m-3"></i>
           <button className="text-white m-3">Sign In</button>
@@ -66,30 +119,30 @@ function NavBar() {
           </ul>
         </div>
         <div className="flex flex-col flex-wrap justify-center space-y-14 w-4/5 ml-9 mt-10">
-            <div className="flex justify-between">
-              <div className="">
-                <h5 className="text-white text-3xl">Browse By Event</h5>
-              </div>
-              <div className="justify-end">
-                <button className="text-xs bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-                  Browse all
-                </button>
-              </div>
+          <div className="flex justify-between">
+            <div className="">
+              <h5 className="text-white text-3xl">Browse By Event</h5>
             </div>
+            <div className="justify-end">
+              <button className="text-xs bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                Browse all
+              </button>
+            </div>
+          </div>
           <div className="text-3xl text-white w-full overflow-x-auto">
 
             <EventCard data={MotorsportData} />
           </div>
-            <div className="flex justify-between">
-              <div className="">
-                <h5 className="text-white text-3xl">Browse By Event</h5>
-              </div>
-              <div className="justify-end">
-                <button className="text-xs bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-                  Browse all
-                </button>
-              </div>
+          <div className="flex justify-between">
+            <div className="">
+              <h5 className="text-white text-3xl">Browse By Event</h5>
             </div>
+            <div className="justify-end">
+              <button className="text-xs bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                Browse all
+              </button>
+            </div>
+          </div>
           <div className="text-white text-3xl w-full overflow-x-auto">
 
             <EventCard data={HorseRacingData} />
