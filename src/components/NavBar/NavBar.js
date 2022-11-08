@@ -41,7 +41,7 @@ function NavBar() {
           <button className="text-white m-3">Sign In</button>
         </div>
       </div>
-      <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
+      <nav className={sidebar ? "transition-all nav-menu active" : "nav-menu"}>
         <div className="side-menu">
           <ul className="nav-menu-items">
             <li className="navbar-toggle">
