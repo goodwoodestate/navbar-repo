@@ -120,7 +120,7 @@ function NavBar() {
                         <button className="font-light hover:font-bold active:font-bold">Hotel</button>
                       </div>
                       {/* ABOVE IS OUR CODE*/}
-                        <div className="h-full mt-8 border-gray-200 flex flex-wrap flex-row justify-evenly content-start gap-5" aria-hidden="true">
+                        <div className="h-full mt-8 border-gray-200" aria-hidden="true">
                           <ShopTiles info={MotorsportData}/>
                         </div>
                       </div>
