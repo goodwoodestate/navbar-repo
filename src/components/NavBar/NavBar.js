@@ -39,7 +39,7 @@ function NavBar() {
           </a>
         </div>
         <div>
-          <button onClick={showShopBar} className="bg-black border-2 w-20 m-3 text-base border-custom-green text-white">
+          <button className="bg-black border-2 w-20 m-3 text-base border-custom-green text-white">
             Shop
           </button>
           <button onClick={buyButton} className="bg-custom-green w-20 m-3 text-lg text-black">
@@ -79,7 +79,7 @@ function NavBar() {
               <h5 className="text-white text-3xl">Browse By Event</h5>
             </div>
           </div>
-            <Transition.Root show={open} as={Fragment}>
+            <Transition.Root show={!open} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={setOpen}>
         <div className="fixed inset-0" />
 
@@ -104,7 +104,7 @@ function NavBar() {
                           <button
                             type="button"
                             className="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                            onClick={() => setOpen(false)}
+                            onClick={() => setOpen(true)}
                           >
                             <span className="sr-only">Close panel</span>
                             <XMarkIcon className="h-6 w-6 text-white bg-bg-custom" aria-hidden="true" />
