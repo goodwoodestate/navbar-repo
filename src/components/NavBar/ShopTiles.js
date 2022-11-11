@@ -6,7 +6,7 @@ function ShopTiles() {
         <a href="#" className='text-white bg-slate-700'>
             <p>date</p>
             <p>Name</p>
-        </a>
+        </a>>>
         </div>
     )
 }
