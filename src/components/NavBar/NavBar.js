@@ -19,13 +19,9 @@ function NavBar() {
     setSidebar(!sidebar);
   };
 
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(false)
   const buyButton = () => {
     setOpen(!open)
-  }
-
-  const test = () => {
-    console.log("Clicked")
   }
 
   return (
@@ -77,7 +73,7 @@ function NavBar() {
             </li>
           </ul>
         </div>
-        <div className="flex flex-col flex-wrap justify-center space-y-14 w-4/5 ml-9 mt-10">
+        <div className="flex flex-col flex-wrap justify-center space-y-14 w-3/5 ml-9 mt-10">
             <div className="flex justify-between">
               <div className="">
                 <h5 className="text-white text-3xl">Browse By Event</h5>
@@ -112,7 +108,7 @@ function NavBar() {
                         <div className="ml-3 flex h-7 items-center">
                           <button
                             type="button"
-                            className="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                            className="rounded-md text-gray-400 hover:text-gray-500 focus:outline-none"
                             onClick={() => setOpen(false)}
                           >
                             <span className="sr-only">Close panel</span>
@@ -134,7 +130,9 @@ function NavBar() {
                         
                         
                       {/* ABOVE IS OUR CODE*/}
-                        <div className="h-full  mt-8 border-gray-200" aria-hidden="true">
+                        <div className="h-full mt-8 border-gray-200 flex flex-wrap flex-row justify-evenly content-start gap-5" aria-hidden="true">
+                          <ShopTiles />
+                          <ShopTiles />
                           <ShopTiles />
                         </div>
                       </div>
