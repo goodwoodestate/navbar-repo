@@ -5,7 +5,7 @@ import { MenuData } from "./MenuData";
 import EventCard from "./Events";
 import "./NavBar.css";
 import MenuDropDown from "./MenuDropDown";
-import { HorseRacingData, MotorsportData } from "../EventData";
+import { HorseRacingData, MotorsportData, EventShopData } from "../EventData";
 import { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
@@ -121,7 +121,7 @@ function NavBar() {
                       </div>
                       {/* ABOVE IS OUR CODE*/}
                         <div className="h-full mt-8 border-gray-200" aria-hidden="true">
-                          <ShopTiles info={MotorsportData}/>
+                          <ShopTiles info={EventShopData}/>
                         </div>
                       </div>
                     </div>
