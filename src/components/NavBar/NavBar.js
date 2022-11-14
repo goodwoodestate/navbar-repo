@@ -122,8 +122,8 @@ function NavBar() {
                       </div>
                       {/* ABOVE IS OUR CODE*/}
                         <div className="h-full mt-8 border-gray-200" aria-hidden="true">
-                          {/* <RestaurantBooking /> */}
-                          <ShopTiles info={ExpierencesData}/>
+                          <RestaurantBooking />
+                          {/* <ShopTiles info={ExpierencesData}/> */}
                           {/* info={EventShopData (ticket stuff data)} */}
                         </div>
                       </div>
