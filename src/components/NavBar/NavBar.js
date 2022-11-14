@@ -5,11 +5,12 @@ import { MenuData } from "./MenuData";
 import EventCard from "./Events";
 import "./NavBar.css";
 import MenuDropDown from "./MenuDropDown";
-import { HorseRacingData, MotorsportData, EventShopData } from "../EventData";
+import { HorseRacingData, MotorsportData, EventShopData, ExpierencesData } from "../EventData";
 import { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import ShopTiles from "./ShopTiles";
+import RestaurantBooking from "./RestarauntBooking";
 function NavBar() {
   const [sidebar, setSidebar] = useState(false);
   const showSidebar = () => {
@@ -94,7 +95,7 @@ function NavBar() {
                 leaveTo="translate-x-full"
               >
                 <Dialog.Panel className="pointer-events-auto w-screen max-w-md">
-                  <div className="flex bg-bg-custom h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
+                  <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl overshop-slider">
                     <div className="px-4 sm:px-6">
                       <div className="flex items-start justify-between">
                         <Dialog.Title className="text-lg font-medium text-white">Shop</Dialog.Title>
@@ -121,7 +122,9 @@ function NavBar() {
                       </div>
                       {/* ABOVE IS OUR CODE*/}
                         <div className="h-full mt-8 border-gray-200" aria-hidden="true">
-                          <ShopTiles info={EventShopData}/>
+                          {/* <RestaurantBooking /> */}
+                          <ShopTiles info={ExpierencesData}/>
+                          {/* info={EventShopData (ticket stuff data)} */}
                         </div>
                       </div>
                     </div>
