@@ -12,6 +12,7 @@ import { XMarkIcon } from '@heroicons/react/24/outline'
 import ShopTiles from "./ShopTiles";
 import RestaurantBooking from "./RestarauntBooking";
 import CategoryButton from './OverlayCategoryButton'
+import HotelBooking from "./HotelBooking";
 function NavBar() {
   
   const [sidebar, setSidebar] = useState(false);
@@ -31,7 +32,7 @@ function NavBar() {
       console.log('Restaurant clicked')
   }
   else if (e.target.innerText === 'Hotel') {
-      console.log('Hotel clicked')
+    console.log("Clicked the Hotel Button")
   }
 }
 
@@ -136,14 +137,15 @@ function NavBar() {
                       <div className="absolute inset-0 px-4 sm:px-6">
                       {/* BELOW IS OUR CODE */}
                       <div className="text-white flex justify-between text-lg border-t">
-                      <CategoryButton category={"Tickets"} onClick={handleChildCategoryButtonClick} />
+                        <CategoryButton category={"Tickets"} onClick={handleChildCategoryButtonClick} />
                         <CategoryButton category={"Experiences"} onClick={handleChildCategoryButtonClick} />
                         <CategoryButton category={"Restaurant"} onClick={handleChildCategoryButtonClick} />
                         <CategoryButton category={"Hotel"} onClick={handleChildCategoryButtonClick} />
                       </div>
                       {/* ABOVE IS OUR CODE*/}
                         <div className="h-full mt-8 border-gray-200" aria-hidden="true">
-                          <RestaurantBooking />
+                          {/* <RestaurantBooking /> */}
+                          <HotelBooking />
                           {/* <ShopTiles info={ExpierencesData}/> */}
                           {/* info={EventShopData (ticket stuff data)} */}
                         </div>
