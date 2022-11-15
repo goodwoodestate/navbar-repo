@@ -5,21 +5,39 @@ import { MenuData } from "./MenuData";
 import EventCard from "./Events";
 import "./NavBar.css";
 import MenuDropDown from "./MenuDropDown";
-import { HorseRacingData, MotorsportData } from "../EventData";
+import { HorseRacingData, MotorsportData, EventShopData, ExpierencesData } from "../EventData";
 import { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import ShopTiles from "./ShopTiles";
-
-
+import RestaurantBooking from "./RestarauntBooking";
+import CategoryButton from './OverlayCategoryButton'
+import HotelBooking from "./HotelBooking";
 function NavBar() {
+  
   const [sidebar, setSidebar] = useState(false);
-
+  
   const showSidebar = () => {
     setSidebar(!sidebar);
   };
 
+  function handleChildCategoryButtonClick(e) {
+    if (e.target.innerText === 'Tickets') {
+      console.log('Tickets clicked')
+  }
+  else if (e.target.innerText === 'Experiences') {
+      console.log('Experiences clicked')
+  }
+  else if (e.target.innerText === 'Restaurant') {
+      console.log('Restaurant clicked')
+  }
+  else if (e.target.innerText === 'Hotel') {
+    console.log("Clicked the Hotel Button")
+  }
+}
+
   const [open, setOpen] = useState(false)
+
   const buyButton = () => {
     setOpen(!open)
   }
@@ -27,8 +45,8 @@ function NavBar() {
   return (
     <div>
       <div className="navbar">
-        <div>
           {/* BURGER DIV */}
+          <div className="spacing">
           <Link to="#" className="menu-bars">
             <FaBars onClick={showSidebar} className="m-4 text-3xl text-white" />
           </Link>
@@ -58,7 +76,6 @@ function NavBar() {
             <li className="mt-8">
               <MenuDropDown />
             </li>
-
             {MenuData.map((item, index) => {
               return (
                 <li key={index} className={item.cName}>
@@ -87,7 +104,6 @@ function NavBar() {
             <Transition.Root show={open} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={setOpen}>
         <div className="fixed inset-0" />
-
         <div className="fixed inset-0 overflow-hidden">
           <div className="absolute inset-0 overflow-hidden">
             <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
@@ -101,7 +117,7 @@ function NavBar() {
                 leaveTo="translate-x-full"
               >
                 <Dialog.Panel className="pointer-events-auto w-screen max-w-md">
-                  <div className="flex bg-bg-custom h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
+                  <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl overshop-slider">
                     <div className="px-4 sm:px-6">
                       <div className="flex items-start justify-between">
                         <Dialog.Title className="text-lg font-medium text-white">Shop</Dialog.Title>
@@ -121,19 +137,17 @@ function NavBar() {
                       <div className="absolute inset-0 px-4 sm:px-6">
                       {/* BELOW IS OUR CODE */}
                       <div className="text-white flex justify-between text-lg border-t">
-                        <button className="font-light hover:font-bold active:font-bold">Tickets</button>
-                        <button className="font-light hover:font-bold active:font-bold">Expierences</button>
-                        <button className="font-light hover:font-bold active:font-bold">Restaurants</button>
-                        <button className="font-light hover:font-bold active:font-bold">Hotel</button>
+                        <CategoryButton category={"Tickets"} onClick={handleChildCategoryButtonClick} />
+                        <CategoryButton category={"Experiences"} onClick={handleChildCategoryButtonClick} />
+                        <CategoryButton category={"Restaurant"} onClick={handleChildCategoryButtonClick} />
+                        <CategoryButton category={"Hotel"} onClick={handleChildCategoryButtonClick} />
                       </div>
-                        
-                        
-                        
                       {/* ABOVE IS OUR CODE*/}
-                        <div className="h-full mt-8 border-gray-200 flex flex-wrap flex-row justify-evenly content-start gap-5" aria-hidden="true">
-                          <ShopTiles />
-                          <ShopTiles />
-                          <ShopTiles />
+                        <div className="h-full mt-8 border-gray-200" aria-hidden="true">
+                          {/* <RestaurantBooking /> */}
+                          <HotelBooking />
+                          {/* <ShopTiles info={ExpierencesData}/> */}
+                          {/* info={EventShopData (ticket stuff data)} */}
                         </div>
                       </div>
                     </div>
@@ -146,7 +160,6 @@ function NavBar() {
       </Dialog>
           </Transition.Root>
           <div className="text-3xl text-white w-full overflow-x-auto">
-
             <EventCard data={MotorsportData} />
           </div>
             <div className="flex justify-between">
@@ -160,12 +173,10 @@ function NavBar() {
               </div>
             </div>
           <div className="text-white text-3xl w-full overflow-x-auto">
-
             <EventCard data={HorseRacingData} />
           </div>
         </div>
       </nav>
-
     </div>
   );
 }
