@@ -1,7 +1,7 @@
 import {Accordion, AccordionBody, AccordionHeader, AccordionItem} from "react-headless-accordion";
-import "./RestarauntBooking.css";
+import "./HotelBooking.css";
 
-const RestarauntBooking = () => {
+const HotelBooking = () => {
     return (<div>
         <h1 className="text-white mb-4 text-xl">Dining at The Goodwood Estate</h1>
         <Accordion transition={{duration: "300ms", timingFunction: "cubic-bezier(0, 0, 0.2, 1)"}}>
@@ -98,4 +98,4 @@ const RestarauntBooking = () => {
     );
 };
 
-export default RestarauntBooking;
+export default HotelBooking;
