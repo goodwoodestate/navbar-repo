@@ -12,6 +12,10 @@
     align-content: center;
 }
 
+.test::-webkit-scrollbar {
+    display: none;
+}
+
 .menu-bars {
     font-size: 2rem;
     background: none;

@@ -5,48 +5,54 @@ import { MenuData } from "./MenuData";
 import EventCard from "./Events";
 import "./NavBar.css";
 import MenuDropDown from "./MenuDropDown";
-import { HorseRacingData, MotorsportData, EventShopData, ExpierencesData } from "../EventData";
-import { Fragment } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
-import { XMarkIcon } from '@heroicons/react/24/outline'
+import {
+  HorseRacingData,
+  MotorsportData,
+  EventShopData,
+  ExpierencesData,
+} from "../EventData";
+import { Fragment } from "react";
+import { Dialog, Transition } from "@headlessui/react";
+import { XMarkIcon } from "@heroicons/react/24/outline";
 import ShopTiles from "./ShopTiles";
-import RestaurantBooking from "./RestarauntBooking";
-import CategoryButton from './OverlayCategoryButton'
-import HotelBooking from "./HotelBooking";
+import CategoryButton from "./OverlayCategoryButton";
+
 function NavBar() {
-  
   const [sidebar, setSidebar] = useState(false);
-  
+  let dataSet = EventShopData;
+
   const showSidebar = () => {
     setSidebar(!sidebar);
   };
 
   function handleChildCategoryButtonClick(e) {
-    if (e.target.innerText === 'Tickets') {
-      console.log('Tickets clicked')
+    if (e.target.innerText === "Tickets") {
+      console.log("Tickets clicked");
+      dataSet = EventShopData;
+      console.log(dataSet);
+      ShopTiles();
+      console.log("Tickets clicked end");
+    } else if (e.target.innerText === "Experiences") {
+      dataSet = ExpierencesData;
+      console.log(dataSet);
+    } else if (e.target.innerText === "Restaurant") {
+      console.log("Restaurant clicked");
+    } else if (e.target.innerText === "Hotel") {
+      console.log("Clicked the Hotel Button");
+    }
   }
-  else if (e.target.innerText === 'Experiences') {
-      console.log('Experiences clicked')
-  }
-  else if (e.target.innerText === 'Restaurant') {
-      console.log('Restaurant clicked')
-  }
-  else if (e.target.innerText === 'Hotel') {
-    console.log("Clicked the Hotel Button")
-  }
-}
 
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   const buyButton = () => {
-    setOpen(!open)
-  }
+    setOpen(!open);
+  };
 
   return (
     <div>
       <div className="navbar">
-          {/* BURGER DIV */}
-          <div className="spacing">
+        {/* BURGER DIV */}
+        <div className="spacing">
           <Link to="#" className="menu-bars">
             <FaBars onClick={showSidebar} className="m-4 text-3xl text-white" />
           </Link>
@@ -60,7 +66,10 @@ function NavBar() {
           <button className="bg-black border-2 w-20 m-3 text-base border-custom-green text-white">
             Shop
           </button>
-          <button onClick={buyButton} className="bg-custom-green w-20 m-3 text-lg text-black">
+          <button
+            onClick={buyButton}
+            className="bg-custom-green w-20 m-3 text-lg text-black"
+          >
             Book
           </button>
           <i className="fa-solid fa-magnifying-glass text-2xl text-white m-3"></i>
@@ -74,7 +83,10 @@ function NavBar() {
               <Link to="#" className="menu-bars ml-8 text-3xl"></Link>
             </li>
             <li className="mt-8">
-              <MenuDropDown />
+              <MenuDropDown linkText="Duke Of Richmond">
+                Goodwoods Estate
+                <p className="hidden">inner</p>
+              </MenuDropDown>
             </li>
             {MenuData.map((item, index) => {
               return (
@@ -86,92 +98,114 @@ function NavBar() {
               );
             })}
             <li className="mt-8">
-              <MenuDropDown />
+              <MenuDropDown linkText="Contact the Team!">
+              Contact Us
+              </MenuDropDown>
             </li>
           </ul>
         </div>
         <div className="flex flex-col flex-wrap justify-center space-y-14 w-3/5 ml-9 mt-10">
-            <div className="flex justify-between">
-              <div className="">
-                <h5 className="text-white text-3xl">Browse By Event</h5>
-              </div>
-              <div className="justify-end">
-                <button className="text-xs bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-                  Browse all
-                </button>
-              </div>
+          <div className="flex justify-between">
+            <div className="">
+              <h5 className="text-white text-3xl">Browse By Event</h5>
             </div>
-            <Transition.Root show={open} as={Fragment}>
-      <Dialog as="div" className="relative z-10" onClose={setOpen}>
-        <div className="fixed inset-0" />
-        <div className="fixed inset-0 overflow-hidden">
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
-              <Transition.Child
-                as={Fragment}
-                enter="transform transition ease-in-out duration-500 sm:duration-700"
-                enterFrom="translate-x-full"
-                enterTo="translate-x-0"
-                leave="transform transition ease-in-out duration-500 sm:duration-700"
-                leaveFrom="translate-x-0"
-                leaveTo="translate-x-full"
-              >
-                <Dialog.Panel className="pointer-events-auto w-screen max-w-md">
-                  <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl overshop-slider">
-                    <div className="px-4 sm:px-6">
-                      <div className="flex items-start justify-between">
-                        <Dialog.Title className="text-lg font-medium text-white">Shop</Dialog.Title>
-                        <div className="ml-3 flex h-7 items-center">
-                          <button
-                            type="button"
-                            className="rounded-md text-gray-400 hover:text-gray-500 focus:outline-none"
-                            onClick={() => setOpen(false)}
-                          >
-                            <span className="sr-only">Close panel</span>
-                            <XMarkIcon className="h-6 w-6 text-white bg-bg-custom" aria-hidden="true" />
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="relative mt-6 flex-1 px-4 sm:px-6">
-                      <div className="absolute inset-0 px-4 sm:px-6">
-                      {/* BELOW IS OUR CODE */}
-                      <div className="text-white flex justify-between text-lg border-t">
-                        <CategoryButton category={"Tickets"} onClick={handleChildCategoryButtonClick} />
-                        <CategoryButton category={"Experiences"} onClick={handleChildCategoryButtonClick} />
-                        <CategoryButton category={"Restaurant"} onClick={handleChildCategoryButtonClick} />
-                        <CategoryButton category={"Hotel"} onClick={handleChildCategoryButtonClick} />
-                      </div>
-                      {/* ABOVE IS OUR CODE*/}
-                        <div className="h-full mt-8 border-gray-200" aria-hidden="true">
-                          {/* <RestaurantBooking /> */}
-                          <HotelBooking />
-                          {/* <ShopTiles info={ExpierencesData}/> */}
-                          {/* info={EventShopData (ticket stuff data)} */}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </Dialog.Panel>
-              </Transition.Child>
+            <div className="justify-end">
+              <button className="text-xs bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                Browse all
+              </button>
             </div>
           </div>
-        </div>
-      </Dialog>
+          <Transition.Root show={open} as={Fragment}>
+            <Dialog as="div" className="relative z-10" onClose={setOpen}>
+              <div className="fixed inset-0" />
+              <div className="fixed inset-0 overflow-hidden">
+                <div className="absolute inset-0 overflow-hidden">
+                  <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+                    <Transition.Child
+                      as={Fragment}
+                      enter="transform transition ease-in-out duration-500 sm:duration-700"
+                      enterFrom="translate-x-full"
+                      enterTo="translate-x-0"
+                      leave="transform transition ease-in-out duration-500 sm:duration-700"
+                      leaveFrom="translate-x-0"
+                      leaveTo="translate-x-full"
+                    >
+                      <Dialog.Panel className="pointer-events-auto w-screen max-w-md">
+                        <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl overshop-slider">
+                          <div className="px-4 sm:px-6">
+                            <div className="flex items-start justify-between">
+                              <Dialog.Title className="text-lg font-medium text-white">
+                                Shop
+                              </Dialog.Title>
+                              <div className="ml-3 flex h-7 items-center">
+                                <button
+                                  type="button"
+                                  className="rounded-md text-gray-400 hover:text-gray-500 focus:outline-none"
+                                  onClick={() => setOpen(false)}
+                                >
+                                  <span className="sr-only">Close panel</span>
+                                  <XMarkIcon
+                                    className="h-6 w-6 text-white bg-bg-custom"
+                                    aria-hidden="true"
+                                  />
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="relative mt-6 flex-1 px-4 sm:px-6">
+                            <div className="absolute inset-0 px-4 sm:px-6">
+                              {/* BELOW IS OUR CODE */}
+                              <div className="text-white flex justify-between text-lg border-t">
+                                <CategoryButton
+                                  category={"Tickets"}
+                                  onClick={handleChildCategoryButtonClick}
+                                />
+                                <CategoryButton
+                                  category={"Experiences"}
+                                  onClick={handleChildCategoryButtonClick}
+                                />
+                                <CategoryButton
+                                  category={"Restaurant"}
+                                  onClick={handleChildCategoryButtonClick}
+                                />
+                                <CategoryButton
+                                  category={"Hotel"}
+                                  onClick={handleChildCategoryButtonClick}
+                                />
+                              </div>
+                              {/* ABOVE IS OUR CODE*/}
+                              <div
+                                className="h-full mt-8 border-gray-200"
+                                aria-hidden="true"
+                              >
+                                {/* <RestaurantBooking /> */}
+                                {/* <HotelBooking /> */}
+                                <ShopTiles info={dataSet} />
+                                {/* info={EventShopData (ticket stuff data)} */}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </Dialog.Panel>
+                    </Transition.Child>
+                  </div>
+                </div>
+              </div>
+            </Dialog>
           </Transition.Root>
           <div className="text-3xl text-white w-full overflow-x-auto">
             <EventCard data={MotorsportData} />
           </div>
-            <div className="flex justify-between">
-              <div className="">
-                <h5 className="text-white text-3xl">Browse By Event</h5>
-              </div>
-              <div className="justify-end">
-                <button className="text-xs bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-                  Browse all
-                </button>
-              </div>
+          <div className="flex justify-between">
+            <div className="">
+              <h5 className="text-white text-3xl">Browse By Event</h5>
             </div>
+            <div className="justify-end">
+              <button className="text-xs bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                Browse all
+              </button>
+            </div>
+          </div>
           <div className="text-white text-3xl w-full overflow-x-auto">
             <EventCard data={HorseRacingData} />
           </div>
