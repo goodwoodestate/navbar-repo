@@ -3,19 +3,25 @@ import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { MenuData } from "./MenuData";
 import EventCard from "./Events";
+import BlackButton from "./Buttons/Button";
+import GWGreenButton from "./Buttons/GWGreenButton";
 import "./NavBar.css";
 import MenuDropDown from "./MenuDropDown";
+import HotelBooking from "./HotelBooking";
 import {
   HorseRacingData,
   MotorsportData,
   EventShopData,
   ExpierencesData,
+  StayEatData,
 } from "../EventData";
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import ShopTiles from "./ShopTiles";
+import ShopLowerContainer from "./ShopTiles";
 import CategoryButton from "./OverlayCategoryButton";
+
+
 
 function NavBar() {
   const [sidebar, setSidebar] = useState(false);
@@ -29,14 +35,12 @@ function NavBar() {
     if (e.target.innerText === "Tickets") {
       console.log("Tickets clicked");
       dataSet = EventShopData;
-      console.log(dataSet);
-      ShopTiles();
-      console.log("Tickets clicked end");
     } else if (e.target.innerText === "Experiences") {
+      console.log("Expierences clicked");
       dataSet = ExpierencesData;
-      console.log(dataSet);
     } else if (e.target.innerText === "Restaurant") {
       console.log("Restaurant clicked");
+      dataSet = StayEatData;
     } else if (e.target.innerText === "Hotel") {
       console.log("Clicked the Hotel Button");
     }
@@ -63,15 +67,14 @@ function NavBar() {
           </a>
         </div>
         <div>
-          <button className="bg-black border-2 w-20 m-3 text-base border-custom-green text-white">
+          <BlackButton>
             Shop
-          </button>
-          <button
+          </BlackButton>
+          <GWGreenButton
             onClick={buyButton}
-            className="bg-custom-green w-20 m-3 text-lg text-black"
           >
             Book
-          </button>
+          </GWGreenButton>
           <i className="fa-solid fa-magnifying-glass text-2xl text-white m-3"></i>
           <button className="text-white m-3">Sign In</button>
         </div>
@@ -180,7 +183,7 @@ function NavBar() {
                               >
                                 {/* <RestaurantBooking /> */}
                                 {/* <HotelBooking /> */}
-                                <ShopTiles info={dataSet} />
+                                <ShopLowerContainer QuerySelectorData={dataSet} />
                                 {/* info={EventShopData (ticket stuff data)} */}
                               </div>
                             </div>

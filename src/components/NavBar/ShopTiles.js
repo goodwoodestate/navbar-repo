@@ -1,10 +1,10 @@
 import React from "react";
-import "./ShopTiles.css";
+import "./ShopLowerContainer.css";
 
-function ShopTiles(props) {
+function ShopLowerContainer(props, dataSet) {
   return (
     <div className="h-full w-full flex flex-wrap flex-row justify-evenly content-start gap-5">
-      {props.info.map((item) => {
+      {props.QuerySelectorData.map((item) => {
         const bg = item.image;
         return (
           <div
@@ -29,4 +29,4 @@ function ShopTiles(props) {
   );
 }
 
-export default ShopTiles;
+export default ShopLowerContainer;
