@@ -7,6 +7,8 @@ import BlackButton from "./Buttons/Button";
 import GWGreenButton from "./Buttons/GWGreenButton";
 import "./NavBar.css";
 import MenuDropDown from "./MenuDropDown";
+import signInIcon from "../NavBar/assets/images/sign-in--icon.png"
+import searchIcon from "../NavBar/assets/images/search--icon.png"
 import HotelBooking from "./HotelBooking";
 import {
   HorseRacingData,
@@ -66,7 +68,7 @@ function NavBar() {
             Goodwood
           </a>
         </div>
-        <div>
+        <div className="right-hand__collection">
           <BlackButton>
             Shop
           </BlackButton>
@@ -75,7 +77,9 @@ function NavBar() {
           >
             Book
           </GWGreenButton>
-          <i className="fa-solid fa-magnifying-glass text-2xl text-white m-3"></i>
+          <img src={searchIcon}/>
+          <button className="text-white ml-1 m-3">Search</button>
+          <img src={signInIcon}/>
           <button className="text-white m-3">Sign In</button>
         </div>
       </div>
